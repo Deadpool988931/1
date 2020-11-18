@@ -322,24 +322,24 @@ new const Kes_Modelek[][] = {
 };
 new const Rangok[][Rangs] =
 {
-	{ "LighT Tag I", 25 },
-	{ "LighT Tag II", 100 },
-	{ "LighT Tag III", 250 },
-	{ "LighT Tag IV", 500 },
-	{ "LighT Elite", 700 },
-	{ "LighT Elite Master", 850 },
-	{ "LighT Nova I", 1000 },
-	{ "LighT Nova II", 4000 },
-	{ "LighT Nova III", 7000 },
-	{ "LighT Nova Master", 7800 },
-	{ "LighT Guardian I", 8500 },
-	{ "LighT Guardian II", 9999 },
-	{ "LighT Guardian Elite", 10500 },
-	{ "LighT Ak47 Master", 12000 },
-	{ "LighT Minden napos Jatekos", 14000 },
-	{ "LighT Jatekos ki egeto", 16000 },
-	{ "LighT Admin egeto", 18000 },
-	{ "LighT Szerver egeto jatekos", 20000 }
+	{ "Tag I", 25 },
+	{ "Tag II", 100 },
+	{ "Tag III", 250 },
+	{ "Tag IV", 500 },
+	{ "Elite", 700 },
+	{ "Elite Master", 850 },
+	{ "Nova I", 1000 },
+	{ "Nova II", 4000 },
+	{ "Nova III", 7000 },
+	{ "Nova Master", 7800 },
+	{ "Guardian I", 8500 },
+	{ "Guardian II", 9999 },
+	{ "Guardian Elite", 10500 },
+	{ "Ak47 Master", 12000 },
+	{ "Minden napos Jatekos", 14000 },
+	{ "Jatekos ki egeto", 16000 },
+	{ "Admin egeto", 18000 },
+	{ "Szerver egeto jatekos", 20000 }
 };
 public plugin_init() 
 {
