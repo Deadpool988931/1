@@ -1266,7 +1266,7 @@ public Item(id)
 	formatex(String, charsmax(String), "Játékos \rModellek");
 	menu_additem(menu, String, "0", 0);
 	formatex(String, charsmax(String), "Dollár \rVáltó");
-	menu_additem(menu, String, "0", 0);
+	menu_additem(menu, String, "3", 0);
 	
 	menu_display(id, menu, 0);
 }
@@ -1287,7 +1287,139 @@ if(item == MENU_EXIT)
 	{
 	case 1: Raktar(id);
 	case 2: Szerencsejatekok(id);
+	case 3: Dollarvalto(id);
 }	
+}
+public Dollarvalto(id)
+{
+    new String[121];
+	format(String, charsmax(String), "Dollár \rVáltó");
+	new menu = menu_create(String, "Dollarvalto_h");
+	
+	menu_additem(menu, "1 SMS Pont \y[\r10.00USD\y]", "1", 0);
+	menu_additem(menu, "5 SMS Pont \y[\r35.00USD\y]", "2", 0);
+	menu_additem(menu, "10 SMS Pont \y[\r60.00USD\y]", "3", 0);
+	menu_additem(menu, "15 SMS Pont \y[\r85.00USD\y]", "4", 0);
+	menu_additem(menu, "20 SMS Pont \y[\r110.00USD\y]", "5", 0);
+	menu_additem(menu, "25 SMS Pont \y[\r150.00USD\y]", "6", 0);
+	menu_additem(menu, "30 SMS Pont \y[\r185.00USD\y]", "7", 0);
+
+       menu_display(id, menu, 0);
+}
+public Dollarvalto_h(id, menu, item)
+{
+   	if(item == MENU_EXIT)
+	{
+		menu_destroy(menu);
+		return;
+	}
+	
+	new data[9], szName[64];
+	new access, callback;
+	menu_item_getinfo(menu, item, access, data,charsmax(data), szName,charsmax(szName), callback);
+	new key = str_to_num(data);
+	
+	switch(key)
+	{
+	       case 1: 
+	       {
+	       if(SMS[id] >= 1)
+	       {
+	       
+	       SMS[id] -= 1;
+	       Dollar[id] += 10;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 10.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+	       case 2: 
+	       {
+	       if(SMS[id] >= 5)
+	       {
+	       
+	       SMS[id] -= 5;
+	       Dollar[id] += 35;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 35.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+	       case 3: 
+	       {
+	       if(SMS[id] >= 10)
+	       {
+	       
+	       SMS[id] -= 10;
+	       Dollar[id] += 60;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 60.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+	       case 4: 
+	       {
+	       if(SMS[id] >= 15)
+	       {
+	       
+	       SMS[id] -= 15;
+	       Dollar[id] += 85;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 85.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+	       case 5: 
+	       {
+	       if(SMS[id] >= 20)
+	       {
+	       
+	       SMS[id] -= 20;
+	       Dollar[id] += 110;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 110.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+	       case 6: 
+	       {
+	       if(SMS[id] >= 25)
+	       {
+	       
+	       SMS[id] -= 25;
+	       Dollar[id] += 150;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 150.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+	       case 7: 
+	       {
+	       if(SMS[id] >= 30)
+	       {
+	       
+	       SMS[id] -= 30;
+	       Dollar[id] += 185;
+	       client_print_color(id, print_team_default, "^4%s ^1Sikeresen váltotál 185.00USD-t!", C_Prefix);
+	       }
+	       else
+	       {
+	       client_print_color(id, print_team_default, "^4%s ^1Nincs elég SMS Pontod!", C_Prefix);
+	       }
+	       }
+}
 }
 public Szerencsejatekok(id)
 {
